@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GDASH - Monitoramento Climático Inteligente" />
+  <title>GDASH - Dashboard Climático</title>
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND (opcional) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ICONES -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="assets/css/style.css" style="background-color: #6f6c79;"/>
+</head> />
+</head>
+<body class="text-gray-900">
+
+  <!-- NAVBAR / HEADER -->
+  <header role="banner" class="header w-full shadow-sm sticky top-0 z-50">
+    <nav role="navigation" aria-label="Main Navigation" class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+      <div class="flex items-center gap-3">
+        <div class="brand">
+          <div class="w-10 h-10 rounded-md bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white font-semibold brand-mark">G</div>
+          <img src="img/gdash-logo.png" loading="lazy" alt="GDASH" class="brand-logo" data-hide-onerror>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold"><b>GDASH</b></h1>
+          <p class="text-xs text-white -mt-1"><strong>Dashboard Climático</strong></p>
+        </div>
+      </div>
+
+      <div class="hidden md:flex gap-6 text-sm font-medium text-white items-center">
+        <!-- mini stats (realtime) -->
+        <div class="mini-stats mr-6 hidden md:flex items-center gap-4 text-sm">
+          <div class="mini-item" aria-live="polite"><strong id="mini-temp">-- °C</strong></div>
+          <div class="mini-item" aria-live="polite"><strong id="mini-humidity">-- %</strong></div>
+          <div class="mini-item" aria-live="polite"><strong id="mini-wind">-- km/h</strong></div>
+        </div>
+        <!-- back button -->
+        <button id="btn-back" class="btn-back md:inline-flex mr-2" aria-label="Voltar">Voltar</button>
+        <a href="dashboard.html" aria-current="page" aria-label="Dashboard" class="hover:opacity-90 transition nav-link"><b>Dashboard</b></a>
+        <a href="api.html" aria-label="API" class="hover:opacity-90 transition nav-link"><b>API</b></a>
+        <a href="sobre.html" aria-label="Sobre" class="hover:opacity-90 transition nav-link"><b>Sobre</b></a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto mt-10 px-6">
+
+    <!-- HERO -->
+    <section class="flex flex-col-reverse md:flex-row items-center gap-10">
+      <div class="flex-1">
+        <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-3"><b>Monitoramento Climático Inteligente</b></h2>
+        <p class="text-gray-700 mb-6">Dados em tempo real combinados com análise preditiva de IA — o futuro do clima direto no teu painel.</p>
+        <div class="flex gap-3">
+          <a href="dashboard.html" id="open-dashboard" class="px-5 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition"><strong>Ver Dashboard</strong></a>
+          <a href="api.html" class="px-5 py-3 border border-gray-200 rounded-lg text-sm text-gray-700 hover:bg-gray-50"><strong>Documentação</strong></a>
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2">
+        <div class="hero-media rounded-xl shadow-md">
+          <div class="text-center">
+            <img src="img/gdash-logo.png" alt="Ilustração do dashboard" class="mx-auto hero-img" width="480" height="240" loading="lazy" data-hide-onerror>
+            <p class="mt-2 text-sm text-gray-500">Ilustração do painel (substitua se quiser)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA DE IMAGENS: 4 IMAGENS -->
+    <section class="image-gallery" aria-label="Galeria de imagens do GDASH">
+      <h2>Galeria</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="img/paronama-clima.png" alt="Panorama climático" loading="lazy" width="800" height="450" data-hide-onerror>
+          <figcaption>Estação 1 — Coastal</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="img/mapa-vento.png" alt="Mapa do Vento" loading="lazy" width="800" height="450" data-hide-onerror>
+          <figcaption>Mapa de vento</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="img/weather.png" alt="Sensor IoT" loading="lazy" width="800" height="450" data-hide-onerror>
+          <figcaption>Sensor IoT</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="img/painel-clima.png" alt="Painel de leitura" loading="lazy" width="800" height="450" data-hide-onerror>
+          <figcaption>Painel de leitura</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CARDS PRINCIPAIS -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+
+      <article class="card">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-semibold text-lg"><b>Temperatura</b></h3>
+            <p class="text-sm text-gray-500"><strong>Atual</strong></p>
+          </div>
+          <i data-lucide="thermometer" class="w-6 h-6 text-red-500"></i>
+        </div>
+        <p id="temp" class="text-3xl font-bold mt-4">-- °C</p>
+        <p id="temp-desc" class="text-sm text-gray-500 mt-1">—</p>
+      </article>
+
+      <article class="card">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-semibold text-lg"><b>Umidade</b></h3>
+            <p class="text-sm text-gray-500"><strong>Relativa</strong></p>
+          </div>
+          <i data-lucide="droplets" class="w-6 h-6 text-blue-500"></i>
+        </div>
+        <p id="humidity" class="text-3xl font-bold mt-4">-- %</p>
+        <p id="humidity-desc" class="text-sm text-gray-500 mt-1">—</p>
+      </article>
+
+      <article class="card">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-semibold text-lg"><b>Vento</b></h3>
+            <p class="text-sm text-gray-500"><strong>Velocidade</strong></p>
+          </div>
+          <i data-lucide="wind" class="w-6 h-6 text-slate-500"></i>
+        </div>
+        <p id="wind" class="text-3xl font-bold mt-4">-- km/h</p>
+        <p id="wind-desc" class="text-sm text-gray-500 mt-1">Direção: —</p>
+      </article>
+
+      <article class="card">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-semibold text-lg"><b>Insight de IA</b></h3>
+            <p class="text-sm text-gray-500"><strong>Resumo</strong></p>
+          </div>
+          <i data-lucide="cpu" class="w-6 h-6 text-purple-600"></i>
+        </div>
+        <p id="insight" class="mt-4 text-gray-700" aria-live="polite"> Texto explicativo: "Alta chance de chuva nas próximas horas"</p>
+      </article>
+
+    </section>
+
+    <!-- GRÁFICOS E ÚLTIMOS REGISTROS -->
+    <section class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow">
+        <h3 class="font-semibold mb-3"><b><strong>Gráficos & Histórico</strong></b></h3>
+        <p class="text-sm text-gray-500">Aqui entram gráficos de temperatura, chuva e tendência. (Substitua por teus charts — Chart.js, Recharts, etc.)</p>
+        <div class="mt-4 h-40 rounded-md bg-gray-50 flex items-center justify-center text-gray-400">[Gráficos]</div>
+        <img src="img/grafico-clima.png" alt="Ilustração do dashboard" class="mx-auto" width="680" height="220" loading="lazy" data-hide-onerror>
+      </div>
+
+      <section>
+    <!-- TABELA DE REGISTRO -->
+    <section id="tabela-registros">
+      <h1><b><strong>Registro de Clima</strong></b></h1>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th><b>Data/Hora</b></th>
+            <th><b>Local</b></th>
+            <th><b>Condição</b></th>
+            <th><b>Temperatura</b></th>
+            <th><b>Umidade</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>--/-- --:--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>-- °C</td>
+            <td>-- %</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="botoes-exportar">
+        <button type="button" class="btn-orange" data-export="csv" aria-label="Exportar registros CSV"><strong>Exportar CSV</strong></button>
+        <button type="button" class="btn-orange" data-export="xlsx" aria-label="Exportar registros XLSX"><strong>Exportar XLSX</strong></button>
+      </div>
+    </section>
+
+      <aside class="bg-white p-6 rounded-xl shadow">
+        <h4 class="font-semibold mb-2"><strong>Últimos Registros</strong></h4>
+        <ul id="recent-logs" class="text-sm text-gray-600 space-y-2">
+          <li>—</li>
+        </ul>
+      </aside>
+    </section>
+
+    <p id="resumo-ia" aria-live="polite"><i>
+        <strong>Resumo:</strong> "Nos últimos 3 dias, a temperatura média foi de 28°C,
+        com alta umidade e tendência de chuva no fim da tarde."
+      </i></p>
+
+    <!-- RODAPÉ -->
+    <footer class="footer text-center py-10 mt-12 text-sm">
+      <div class="max-w-6xl mx-auto px-6">
+        <p><strong>GDASH 2025 — Construído por Janine Cunha</strong></p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/script.js" defer></script>
+  <script> /* inicializa ícones lucide quando a lib carregar */ globalThis.addEventListener('load', ()=>{ if(globalThis.lucide) lucide.replace(); }); </script>
+</body>
+</html>

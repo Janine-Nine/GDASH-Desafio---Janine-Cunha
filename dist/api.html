@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GDASH - Documentação da API" />
+  <title>GDASH - API</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header role="banner" class="header">
+    <nav role="navigation" aria-label="Main Navigation" class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+      <div class="flex items-center gap-3">
+        <div class="brand">
+          <div class="brand-mark">G</div>
+          <img src="img/gdash-logo.png" alt="GDASH" class="brand-logo" loading="lazy" data-hide-onerror>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold"><b>GDASH</b></h1>
+          <p class="text-xs text-white -mt-1"><strong>API</strong></p>
+        </div>
+      </div>
+
+      <div class="hidden md:flex gap-6 text-sm font-medium text-white items-center">
+        <!-- mini stats (realtime) -->
+        <div class="mini-stats mr-6 hidden md:flex items-center gap-4 text-sm">
+          <div class="mini-item" aria-live="polite"><strong id="mini-temp">-- °C</strong></div>
+          <div class="mini-item" aria-live="polite"><strong id="mini-humidity">-- %</strong></div>
+          <div class="mini-item" aria-live="polite"><strong id="mini-wind">-- km/h</strong></div>
+        </div>
+        <!-- back button -->
+        <button id="btn-back" class="btn-back md:inline-flex mr-2" aria-label="Voltar">Voltar</button>
+        <a href="dashboard.html" aria-label="Dashboard" class="hover:opacity-90 transition nav-link"><b>Dashboard</b></a>
+        <a href="api.html" aria-current="page" aria-label="API" class="hover:opacity-90 transition nav-link"><b>API</b></a>
+        <a href="sobre.html" aria-label="Sobre" class="hover:opacity-90 transition nav-link"><b>Sobre</b></a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto mt-10 px-6">
+    <section class="card">
+      <h2>Documentação da API</h2>
+      <p>Esta seção descreve endpoints básicos para acessar dados climáticos do GDASH. Ajuste conforme o teu backend.</p>
+
+      <h3>Autenticação</h3>
+      <p>Bearer token via header <code>Authorization: Bearer &lt;TOKEN&gt;</code></p>
+
+      <h3>Endpoints principais</h3>
+
+      <h4>GET /api/v1/stations</h4>
+      <pre>
+GET /api/v1/stations
+Response: 200
+[
+  {
+    "id": "station-01",
+    "name": "Praia A",
+    "lat": -23.5,
+    "lon": -46.6
+  },
+  ...
+]
+      </pre>
+
+      <h4>GET /api/v1/stations/{id}/observations?from=YYYY-MM-DD&to=YYYY-MM-DD</h4>
+      <pre>
+GET /api/v1/stations/station-01/observations?from=2025-01-01&to=2025-01-03
+Response: 200
+[
+  { "timestamp": "2025-01-01T12:00:00Z", "temp": 28.3, "humidity": 78, "wind": 12 },
+  ...
+]
+      </pre>
+
+      <h4>POST /api/v1/observations</h4>
+      <pre>
+POST /api/v1/observations
+Body:
+{
+  "stationId": "station-01",
+  "timestamp": "2025-11-29T10:12:00Z",
+  "temp": 27.8,
+  "humidity": 80,
+  "wind": 10
+}
+      </pre>
+
+      <h3>Exemplos em cURL</h3>
+      <pre>
+curl -H "Authorization: Bearer $TOKEN" "https://api.seudominio.com/api/v1/stations"
+      </pre>
+
+      <p class="text-sm text-gray-500">Dica: se quiser, eu gero também um arquivo Postman/Insomnia já com exemplos e collection.</p>
+    </section>
+
+    <footer class="footer text-center py-10 mt-12 text-sm">
+      <div class="max-w-6xl mx-auto px-6">
+        <p><strong>GDASH 2025 — Documentação</strong></p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="assets/js/script.js" defer></script>
+  <script> globalThis.addEventListener('load', ()=>{ if(globalThis.lucide) lucide.replace(); }); </script>
+</body>
+</html>

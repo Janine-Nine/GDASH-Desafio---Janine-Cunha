@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* extra styles adopted from original style.css where necessary */
+:root { --bg: #f0f4f8; --accent: #1c2541; }
+
+body { @apply bg-gdash-bg text-slate-900; }
+
+.header { @apply bg-slate-900 text-white p-6 text-center border-b-4 border-slate-700; }
+.container { @apply max-w-6xl mx-auto p-6 grid gap-6 grid-cols-1 sm:grid-cols-2; }
+.card { @apply bg-white p-6 rounded-lg shadow text-center transform transition-transform; }
+.card:hover { transform: translateY(-6px); }
+.insights { @apply col-span-1 sm:col-span-2; }

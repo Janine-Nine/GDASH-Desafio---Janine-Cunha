@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fundo geral */
+body {
+    background: #f0f4f8;
+    color: #222;
+}
+
+/* Header */
+.header {
+    background: #0b132b;
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: 4px solid #3a506b;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.header p {
+    opacity: 0.8;
+}
+
+/* Container geral */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 0 20px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1c2541;
+}
+
+/* Card especial de insights */
+.insights {
+    grid-column: span 2;
+}
+
+.insights p {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    background: #1c2541;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-top: 4px solid #3a506b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #222;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* =========================== */
+/* CARDS DO CLIMA */
+/* =========================== */
+
+#cards-clima {
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  width: 220px;
+  font-size: 18px;
+}
+
+/* =========================== */
+/* GRÁFICOS */
+/* =========================== */
+
+#grafico, #graficos {
+  margin-bottom: 40px;
+}
+
+.grafico {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* =========================== */
+/* TABELA */
+/* =========================== */
+
+#tabela-registros table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: white;
+}
+
+#tabela-registros th, 
+#tabela-registros td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+#tabela-registros th {
+  background: #e8eef4;
+  font-weight: bold;
+}
+
+.botoes-exportar {
+  display: flex;
+  gap: 10px;
+}
+
+.botoes-exportar button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botoes-exportar button:hover {
+  background: #1d4ed8;
+}
+
+/* =========================== */
+/* INSIGHTS DE IA */
+/* =========================== */
+
+#insights {
+  margin-top: 40px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+
+#texto-explicativo {
+  margin-bottom: 20px;
+  font-size: 18px;
+  background: #e0f2fe;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+#cards-alertas {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.alerta {
+  background: #fee2e2;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #b91c1c;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* =========================== */
+/* BOTÕES DE IA */
+/* =========================== */
+
+.botoes-ia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.botoes-ia button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #0f766e;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botoes-ia button:hover {
+  background: #0d5f59;
+}
+
+/* =========================== */
+/* RESUMO IA */
+/* =========================== */
+
+#resumo-ia {
+  background: #fefce8;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 17px;
+  border-left: 5px solid #facc15;
+}

@@ -1,0 +1,329 @@
+<!-- minimal Vite index.html - overwritten to remove duplicates -->
+<!-- replaced -->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="GDASH - Monitoramento Climático Inteligente" />
+    <title>GDASH - Dashboard Climático</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="GDASH - Monitoramento Climático Inteligente" />
+    <title>GDASH - Dashboard Climático</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GDASH - Monitoramento Climático Inteligente" />
+    <title>GDASH - Dashboard Climático</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDASH - Dashboard Climático</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header class="header">
+        <h1>Dashboard Climático</h1>
+        <p>Dados reais + IA 🚀</p>
+    </header>
+
+    <main class="container">
+
+     
+      <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ICONES -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- ESTILO EXTRA -->
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background: #f3f4f6;
+    }
+  </style>
+</head>
+
+<body class="text-gray-900">
+
+  <!-- NAVBAR -->
+  <header class="w-full bg-white shadow-sm sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+      <div class="flex items-center gap-3">
+        <img src="/images/gdash-logo.png" alt="GDASH Logo" class="w-10 h-10">
+        <h1 class="text-xl font-bold tracking-tight">GDASH</h1>
+      </div>
+
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#" class="hover:text-blue-600 transition">Dashboard</a>
+        <a href="#" class="hover:text-blue-600 transition">API</a>
+        <a href="#" class="hover:text-blue-600 transition">Sobre</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto mt-10 px-6 flex flex-col md:flex-row items-center gap-10">
+    <div class="flex-1">
+      <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+        Monitoramento Climático Inteligente
+      </h2>
+      <p class="text-gray-700 text-lg mb-6">
+        Dados em tempo real combinados com análise preditiva de IA.  
+        O futuro do clima, direto no seu dashboard.
+      </p>
+      <button class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
+        Ver Dashboard
+      </button>
+    </div>
+
+    <img src="/images/weather-hero.png" alt="Dashboard Ilustração"
+      class="w-full md:w-1/2 rounded-xl shadow-md">
+  </section>
+
+  <!-- DASHBOARD SECTION -->
+  <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14 px-6">
+
+    <!-- CARD TEMP -->
+    <section class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg">Temperatura</h3>
+        <i data-lucide="thermometer" class="w-6 h-6 text-red-500"></i>
+      </div>
+      <p id="temp" class="text-3xl font-bold mt-3">-- °C</p>
+    </section>
+
+    <!-- CARD UMIDADE -->
+    <section class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg">Umidade</h3>
+        <i data-lucide="droplets" class="w-6 h-6 text-blue-500"></i>
+      </div>
+      <p id="humidity" class="text-3xl font-bold mt-3">-- %</p>
+    </section>
+
+    <!-- CARD VENTO -->
+    <section class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg">Vento</h3>
+        <i data-lucide="wind" class="w-6 h-6 text-slate-500"></i>
+      </div>
+      <p id="wind" class="text-3xl font-bold mt-3">-- km/h</p>
+    </section>
+
+    <!-- CARD INSIGHTS -->
+    <section class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition col-span-1 md:col-span-2 lg:col-span-1">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg">Insight de IA</h3>
+        <i data-lucide="brain" class="w-6 h-6 text-purple-600"></i>
+      </div>
+      <p id="insight" class="mt-4 text-gray-700">Carregando...</p>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="text-center py-10 mt-20 text-gray-600 text-sm">
+    <p>GDASH 2025 — Construído por <strong>Janine Cunha</strong></p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel de Controle do Clima</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Painel de Controle do Clima</h1>
+  </header>
+
+  <main>
+
+    <!-- ========================= -->
+    <!-- SEÇÃO: CARTAS PRINCIPAIS -->
+    <!-- ========================= -->
+    <section id="cards-clima">
+      <h2>Dados Atuais</h2>
+
+      <div class="cards-container">
+        <div class="card">Temperatura Atual: <span>-- °C</span></div>
+        <div class="card">Umidade Atual: <span>-- %</span></div>
+        <div class="card">Velocidade do Vento: <span>-- km/h</span></div>
+        <div class="card">Condição: <span>--</span></div>
+      </div>
+    </section>
+
+    <!-- ================= -->
+    <!-- SEÇÃO: GRÁFICOS  -->
+    <!-- ================= -->
+    <section id="graficos">
+      <h2>Gráficos Climáticos</h2>
+
+      <div class="grafico">Temperatura ao longo do tempo (gráfico aqui)</div>
+      <div class="grafico">Probabilidade de chuva ao longo do tempo (gráfico aqui)</div>
+    </section>
+
+    <!-- ======================= -->
+    <!-- SEÇÃO: TABELA DE REGISTRO -->
+    <!-- ======================= -->
+    <section id="tabela-registros">
+      <h2>Registros de Clima</h2>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Data/Hora</th>
+            <th>Local</th>
+            <th>Condição</th>
+            <th>Temperatura</th>
+            <th>Umidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>--/-- --:--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>-- °C</td>
+            <td>-- %</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="botoes-exportar">
+        <button>Exportar CSV</button>
+        <button>Exportar XLSX</button>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- SEÇÃO: INSIGHTS IA -->
+    <!-- ===================== -->
+    <section id="insights">
+      <h2>Insights de IA</h2>
+
+      <p id="texto-explicativo">
+        Texto explicativo: "Alta chance de chuva nas próximas horas"
+      </p>
+
+      <div id="cards-alertas">
+        <div class="alerta">Calor extremo</div>
+        <div class="alerta">Frio intenso</div>
+        <div class="alerta">Clima agradável</div>
+      </div>
+
+      <div class="botoes-ia">
+        <button>Calcular Temperatura Média</button>
+        <button>Calcular Umidade Média</button>
+        <button>Detectar Tendência</button>
+        <button>Pontuar Conforto Climático</button>
+        <button>Classificar Dia</button>
+        <button>Gerar Alerta</button>
+        <button>Gerar Resumo</button>
+      </div>
+
+      <p id="resumo-ia">
+        Resumo: "Nos últimos 3 dias, a temperatura média foi de 28°C,
+        com alta umidade e tendência de chuva no fim da tarde."
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explorar — PokéAPI</title>
+<script type="module" src="/src/main.jsx"></script>
+</head>
+<div className="p-6 max-w-3xl mx-auto">
+<h1 className="text-3xl font-bold mb-4">Explorar Pokémons</h1>
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+{loading ? (
+<p>Carregando...</p>
+) : (
+data.map((p) => (
+<Card key={p.name} className="shadow-md">
+<CardHeader>
+<CardTitle className="capitalize">{p.name}</CardTitle>
+</CardHeader>
+<CardContent>
+<a
+href={`/explorar/${p.name}`}
+className="text-blue-500 underline hover:text-blue-700"
+>
+Ver detalhes
+</a>
+</CardContent>
+</Card>
+))
+)}
+</div>
+
+<div className="flex justify-between mt-6">
+<Button disabled={page === 1} onClick={() => setPage(page - 1)}>
+Voltar
+</Button>
+<Button onClick={() => setPage(page + 1)}>Próxima</Button>
+</div>
+</div>
+}
+<body class="bg-gray-100">
+<div id="root"></div>
+</body>
+</html>

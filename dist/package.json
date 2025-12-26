@@ -1,0 +1,10 @@
+{
+  "name": "gdash",
+  "version": "1.0.0",
+  "description": "GDASH - dashboard climatológico - reorganizado",
+  "scripts": {
+    "optimize-images": "npx imagemin \"img/*.{png,jpg,jpeg}\" --out-dir=img/optimized"
+  },
+  "author": "Janine Cunha",
+  "license": "MIT"
+}

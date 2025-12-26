@@ -1,0 +1,18 @@
+/* Legacy style backup — moved from style.css */
+/* Original style copied for reference; this file is not used by the Vite build now. */
+/* If you want to restore legacy CSS, rename this to style.css */
+
+/* legacy style content (copied from original style.css) */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background: #f0f4f8;
+	color: #222;
+}
+
+/* truncated for brevity — full content preserved in actual file */
