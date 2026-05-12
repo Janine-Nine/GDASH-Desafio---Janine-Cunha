@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # GDASH - Sistema de Monitoramento de Energia Renovável
 
 ## 📖 Visão Geral
